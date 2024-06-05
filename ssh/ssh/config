@@ -1,0 +1,45 @@
+# ------------START-CODER-----------
+# This section is managed by coder. DO NOT EDIT.
+#
+# You should not hand-edit this section unless you are removing it, all
+# changes will be lost when running "coder config-ssh".
+#
+Host coder.Demo
+	HostName coder.Demo
+	ConnectTimeout=0
+	StrictHostKeyChecking=no
+	UserKnownHostsFile=/dev/null
+	LogLevel ERROR
+	ProxyCommand /opt/homebrew/bin/coder --global-config "/Users/rbeene/Library/Application Support/coderv2" ssh --stdio Demo
+Host coder.Demo.main
+	HostName coder.Demo.main
+	ConnectTimeout=0
+	StrictHostKeyChecking=no
+	UserKnownHostsFile=/dev/null
+	LogLevel ERROR
+	ProxyCommand /opt/homebrew/bin/coder --global-config "/Users/rbeene/Library/Application Support/coderv2" ssh --stdio Demo.main
+Host coder.Test
+	HostName coder.Test
+	ConnectTimeout=0
+	StrictHostKeyChecking=no
+	UserKnownHostsFile=/dev/null
+	LogLevel ERROR
+	ProxyCommand /opt/homebrew/bin/coder --global-config "/Users/rbeene/Library/Application Support/coderv2" ssh --stdio Test
+Host coder.Test.main
+	HostName coder.Test.main
+	ConnectTimeout=0
+	StrictHostKeyChecking=no
+	UserKnownHostsFile=/dev/null
+	LogLevel ERROR
+	ProxyCommand /opt/homebrew/bin/coder --global-config "/Users/rbeene/Library/Application Support/coderv2" ssh --stdio Test.main
+# ------------END-CODER------------
+
+# --- START CODER VSCODE ---
+Host coder-vscode--*
+  ConnectTimeout 0
+  LogLevel ERROR
+  ProxyCommand "/Users/rbeene/Library/Application Support/Code/User/globalStorage/coder.coder-remote/bin/coder-darwin-arm64" vscodessh --network-info-dir "/Users/rbeene/Library/Application Support/Code/User/globalStorage/coder.coder-remote/net" --log-dir "/Users/rbeene/Library/Application Support/Code/User/globalStorage/coder.coder-remote/log" --session-token-file "/Users/rbeene/Library/Application Support/Code/User/globalStorage/coder.coder-remote/session_token" --url-file "/Users/rbeene/Library/Application Support/Code/User/globalStorage/coder.coder-remote/url" %h
+  SetEnv  CODER_SSH_SESSION_TYPE=vscode
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+# --- END CODER VSCODE ---
